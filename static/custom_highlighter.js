@@ -41,3 +41,9 @@ ace.define("ace/mode/custom", ["require", "exports", "module", "ace/lib/oop", "a
 var editor = ace.edit("editor");
 editor.setTheme("ace/theme/monokai");
 editor.session.setMode("ace/mode/custom");
+
+document.querySelector("form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    document.getElementById("text").value = editor.getValue();
+    event.target.submit();
+});
