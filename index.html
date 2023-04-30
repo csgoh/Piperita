@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagram Generator</title>
+</head>
+
+<body>
+    <h1>Diagram Generator</h1>
+    <form method="POST">
+        <label for="text">Enter multiline text:</label><br>
+        <textarea name="text" id="text" rows="10" cols="50"></textarea><br>
+        <input type="submit" value="Generate Diagram">
+    </form>
+    {% if diagram %}
+    <h2>Generated Diagram:</h2>
+    <img src="data:image/png;base64,{{ diagram }}" alt="Generated Diagram">
+    {% endif %}
+</body>
+
+</html>
