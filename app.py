@@ -13,7 +13,7 @@ def index():
     if request.method == "POST":
         text = request.form["text"]
         diagram = generate_diagram(text)
-    return render_template("index.html", diagram=diagram)
+    return render_template("index2.html", diagram=diagram)
 
 
 def generate_diagram(text):
