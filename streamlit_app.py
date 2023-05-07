@@ -1,6 +1,7 @@
 import streamlit as st
 import traceback
 from processpiper.text2diagram import render
+from PIL import Image
 
 sample_codes = {
     "Sample 1": """#Showcase Process Piper plain text to diagram capability
@@ -72,10 +73,11 @@ Indentation is not required. However, it is recommended to use indentation to ma
 
 
 def generate_diagram(input_text: str):
-    # output_image_file = "output.png"
+    output_image_file = "output.png"
     # Call the render function to generate the diagram
     try:
-        generated_code, generated_image = render(input_text)
+        _, _ = render(input_text, output_image_file)
+        generated_image = Image.open(output_image_file)
         return generated_image
     except Exception as e:
         print(e)
