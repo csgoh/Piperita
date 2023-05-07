@@ -76,8 +76,11 @@ def generate_diagram(input_text: str):
     output_image_file = "output.png"
     # Call the render function to generate the diagram
     try:
-        _, _ = render(input_text, output_image_file)
-        generated_image = Image.open(output_image_file)
+        generated_code, generated_image = render(input_text, output_image_file)
+        st.text("Generated code:")
+        st.code(generated_code)
+        # st.success("Diagram generated successfully")
+        # generated_image = Image.open(output_image_file)
         return generated_image
     except Exception as e:
         print(e)
