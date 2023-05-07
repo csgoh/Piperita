@@ -127,12 +127,13 @@ code = st.text_area(
 if generate_buton:
     try:
         diagram = generate_diagram(code)
+        st.text(f"Size of diagram {diagram.size}")
         gen_image = st.image(
             diagram,
             caption="Generated Business Process Diagram",
             use_column_width=True,
         )
-        st.text(f"Size of diagram {diagram.size}")
+
     except Exception as e:
         # st.error(f"Error generating diagram: {e}")
         # Get the entire traceback as a string
