@@ -130,11 +130,11 @@ code = st.text_area(
 if generate_buton:
     try:
         diagram = generate_diagram(code)
-        # gen_image = st.image(
-        #     diagram,
-        #     caption="Generated Business Process Diagram",
-        #     use_column_width=True,
-        # )
+        gen_image = st.image(
+            diagram,
+            caption="Generated Business Process Diagram",
+            use_column_width=True,
+        )
 
     except Exception as e:
         # st.error(f"Error generating diagram: {e}")
