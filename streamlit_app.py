@@ -73,10 +73,10 @@ Indentation is not required. However, it is recommended to use indentation to ma
 
 
 def generate_diagram(input_text: str):
-    output_image_file = "output.png"
+    # output_image_file = "output.png"
     # Call the render function to generate the diagram
     try:
-        generated_code, generated_image = render(input_text, output_image_file)
+        generated_code, generated_image = render(input_text)
         return generated_image
     except Exception as e:
         print(e)
