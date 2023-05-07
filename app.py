@@ -132,6 +132,7 @@ if generate_buton:
                 return output_image_file
             except Exception as e:
                 tb_str = traceback.format_exc()
+                st.text(f"Error generate_diagram(): {e}\n{tb_str}")
                 st.error(f"Error generate_diagram(): {e}\n{tb_str}")
 
         output_image_file = generate_diagram(code)
