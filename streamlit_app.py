@@ -81,7 +81,8 @@ def generate_diagram(input_text: str):
         st.code(generated_code)
         # st.success("Diagram generated successfully")
         # generated_image = Image.open(output_image_file)
-        return generated_image
+        # return generated_image
+        return output_image_file
     except Exception as e:
         print(e)
         return
@@ -129,12 +130,13 @@ code = st.text_area(
 
 if generate_buton:
     try:
-        diagram = generate_diagram(code)
-        gen_image = st.image(
-            diagram,
-            caption="Generated Business Process Diagram",
-            use_column_width=True,
-        )
+        output_image_file = generate_diagram(code)
+        diagram = Image.open(output_image_file)
+        # gen_image = st.image(
+        #     diagram,
+        #     caption="Generated Business Process Diagram",
+        #     use_column_width=True,
+        # )
 
     except Exception as e:
         # st.error(f"Error generating diagram: {e}")
