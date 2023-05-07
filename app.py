@@ -131,8 +131,8 @@ if generate_buton:
                 st.write("generate_diagram: 3")
                 return output_image_file
             except Exception as e:
-                print(e)
-                return
+                tb_str = traceback.format_exc()
+                st.error(f"Error generate_diagram(): {e}\n{tb_str}")
 
         output_image_file = generate_diagram(code)
         st.write(f"output image fie :[{output_image_file}]")
