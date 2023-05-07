@@ -138,4 +138,6 @@ if generate_buton:
         tb_str = traceback.format_exc()
 
         # Display the error message with the entire traceback
-        st.error(f"Error generating diagram: {e}\n{tb_str}")
+        st.error(
+            f"Error generating diagram: {e}\n{tb_str}\nsize of diagram {len(diagram)}"
+        )
