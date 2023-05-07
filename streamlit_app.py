@@ -132,10 +132,11 @@ if generate_buton:
             caption="Generated Business Process Diagram",
             use_column_width=True,
         )
+        st.text(f"Size of diagram {diagram.size}")
     except Exception as e:
         # st.error(f"Error generating diagram: {e}")
         # Get the entire traceback as a string
-        tb_str = traceback.format_exc() + f"\nsize of diagram {len(diagram)}"
+        tb_str = traceback.format_exc()
 
         # Display the error message with the entire traceback
         st.error(f"Error generating diagram: {e}\n{tb_str}")
