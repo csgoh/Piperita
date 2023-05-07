@@ -72,22 +72,6 @@ Indentation is not required. However, it is recommended to use indentation to ma
                 """
 
 
-def generate_diagram(input_text: str):
-    output_image_file = "output.png"
-    # Call the render function to generate the diagram
-    try:
-        generated_code, generated_image = render(input_text, output_image_file)
-        st.text("Generated code:")
-        st.code(generated_code)
-        # st.success("Diagram generated successfully")
-        # generated_image = Image.open(output_image_file)
-        # return generated_image
-        return output_image_file
-    except Exception as e:
-        print(e)
-        return
-
-
 st.set_page_config(
     page_title="Piperita: Business Process Diagram Generator",
     page_icon=":herb:",
@@ -130,6 +114,26 @@ code = st.text_area(
 
 if generate_buton:
     try:
+
+        def generate_diagram(input_text: str):
+            st.write("generate_diagram started..")
+            output_image_file = "output.png"
+            # Call the render function to generate the diagram
+            try:
+                st.write("generate_diagram: 1")
+                generated_code, generated_image = render(input_text, output_image_file)
+                st.write("generate_diagram: 2")
+                st.text("Generated code:")
+                st.code(generated_code)
+                # st.success("Diagram generated successfully")
+                # generated_image = Image.open(output_image_file)
+                # return generated_image
+                st.write("generate_diagram: 3")
+                return output_image_file
+            except Exception as e:
+                print(e)
+                return
+
         output_image_file = generate_diagram(code)
         st.write(f"output image fie :[{output_image_file}]")
         diagram = Image.open(output_image_file)
