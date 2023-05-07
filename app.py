@@ -131,6 +131,7 @@ code = st.text_area(
 if generate_buton:
     try:
         output_image_file = generate_diagram(code)
+        st.write(f"output image fie :[{output_image_file}]")
         diagram = Image.open(output_image_file)
         # gen_image = st.image(
         #     diagram,
