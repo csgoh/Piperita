@@ -116,7 +116,7 @@ if generate_buton:
     try:
 
         def generate_diagram(input_text: str):
-            st.write("generate_diagram started..")
+            st.write(f"generate_diagram started..{input_text}")
             output_image_file = "output.png"
             # Call the render function to generate the diagram
             try:
