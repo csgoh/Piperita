@@ -130,7 +130,6 @@ code = st.text_area(
 if generate_buton:
     try:
         diagram = generate_diagram(code)
-        st.text(f"Size of diagram {diagram.size}")
         gen_image = st.image(
             diagram,
             caption="Generated Business Process Diagram",
