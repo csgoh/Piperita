@@ -1,7 +1,6 @@
 import streamlit as st
+import traceback
 from processpiper.text2diagram import render
-from PIL import Image
-import io
 
 sample_codes = {
     "Sample 1": """#Showcase Process Piper plain text to diagram capability
@@ -132,4 +131,15 @@ if generate_buton:
             use_column_width=True,
         )
     except Exception as e:
-        st.error(f"Error generating diagram: {e}")
+        # st.error(f"Error generating diagram: {e}")
+        # Get the current traceback information
+        tb = traceback.extract_tb(e.__traceback__)[-1]
+
+        # Extract the line number and filename
+        line_number = tb.lineno
+        filename = tb.filename
+
+        # Display the error message with the line number and filename
+        st.error(
+            f"Error generating diagram: {e}\nFile: {filename}\nLine: {line_number}"
+        )
