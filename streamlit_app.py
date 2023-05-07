@@ -132,14 +132,8 @@ if generate_buton:
         )
     except Exception as e:
         # st.error(f"Error generating diagram: {e}")
-        # Get the current traceback information
-        tb = traceback.extract_tb(e.__traceback__)[-1]
+        # Get the entire traceback as a string
+        tb_str = traceback.format_exc()
 
-        # Extract the line number and filename
-        line_number = tb.lineno
-        filename = tb.filename
-
-        # Display the error message with the line number and filename
-        st.error(
-            f"Error generating diagram: {e}\nFile: {filename}\nLine: {line_number}"
-        )
+        # Display the error message with the entire traceback
+        st.error(f"Error generating diagram: {e}\n{tb_str}")
