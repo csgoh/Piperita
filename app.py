@@ -116,28 +116,19 @@ if generate_buton:
     try:
 
         def generate_diagram(input_text: str):
-            st.write(f"generate_diagram started..{input_text}")
-            output_image_file = "output.png"
+            #output_image_file = "output.png"
             # Call the render function to generate the diagram
             try:
-                #st.write("generate_diagram: 1")
-                generated_code, generated_image = render(input_text, output_image_file)
-                #st.write("generate_diagram: 2")
-                #st.text("Generated code:")
-                #st.code(generated_code)
-                # st.success("Diagram generated successfully")
-                # generated_image = Image.open(output_image_file)
-                # return generated_image
-                #st.write("generate_diagram: 3")
-                return output_image_file
+                generated_code, generated_image = render(input_text)
+                st.success("Diagram generated successfully")
+                return generated_image
+
             except Exception as e:
                 tb_str = traceback.format_exc()
-                #st.text(f"Error generate_diagram(): {e}\n{tb_str}")
                 st.error(f"Error generate_diagram(): {e}\n{tb_str}")
 
-        output_image_file = generate_diagram(code)
-        #st.write(f"output image fie :[{output_image_file}]")
-        diagram = Image.open(output_image_file)
+        diagram = generate_diagram(code)
+       
         gen_image = st.image(
             diagram,
             caption="Generated Business Process Diagram",
