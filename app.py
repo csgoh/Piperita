@@ -109,7 +109,7 @@ else:
 code = st.text_area(
     "Select a sample from the dropdown or enter your code below:",
     value=code,
-    height=400,
+    height=500,
 )
 
 generate_buton = st.button("Generate")
