@@ -23,7 +23,7 @@ done_baking->take_pizza_out_of_oven: Yes
 take_pizza_out_of_oven->end
 done_baking->put_pizza_in_oven: No""",
     "Sample 2": """title: Sample Test Process
-colourtheme: BLUEMOUNTAIN
+colourtheme: SUNFLOWER
     lane: End User
         (start) as start
         [Enter Keyword] as enter_keyword
