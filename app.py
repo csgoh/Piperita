@@ -73,7 +73,7 @@ Indentation is not required. However, it is recommended to use indentation to ma
 
 
 st.set_page_config(
-    page_title="Piperita: Business Process Diagram Generator",
+    page_title="Piperita: Business Process Diagram Generator v1.0",
     page_icon=":herb:",
     layout="centered",
     menu_items={
