@@ -19,8 +19,9 @@ lane: Pizza Shop
 
 # Connect all the elements    
 start->put_pizza_in_oven->check_pizza_done->done_baking
-done_baking-"Yes"->take_pizza_out_of_oven->end
-done_baking-"No"->put_pizza_in_oven""",
+done_baking->take_pizza_out_of_oven: Yes
+take_pizza_out_of_oven->end
+done_baking->put_pizza_in_oven: No""",
     "Sample 2": """title: Sample Test Process
 colourtheme: BLUEMOUNTAIN
     lane: End User
@@ -105,10 +106,10 @@ else:
     code = ""
 
 
-
-
 code = st.text_area(
-    "Select a sample from the dropdown or enter your code below:", value=code, height=400
+    "Select a sample from the dropdown or enter your code below:",
+    value=code,
+    height=400,
 )
 
 generate_buton = st.button("Generate")
@@ -118,7 +119,7 @@ if generate_buton:
     try:
 
         def generate_diagram(input_text: str):
-            #output_image_file = "output.png"
+            # output_image_file = "output.png"
             # Call the render function to generate the diagram
             try:
                 generated_code, generated_image = render(input_text)
@@ -130,7 +131,7 @@ if generate_buton:
                 st.error(f"Error generate_diagram(): {e}\n{tb_str}")
 
         diagram = generate_diagram(code)
-       
+
         gen_image = st.image(
             diagram,
             caption="Generated Business Process Diagram",
