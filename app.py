@@ -89,7 +89,7 @@ st.markdown(
 )
 
 # st.title("Piperita: Business Process Diagram Generator")
-st.header("Piperita: Business Process Diagram Generator", divider="rainbow")
+st.header("Piperita: Business Process Diagram Generator")
 st.markdown(
     "Piperita is a web frontend to showcase the [ProcessPiper](https://github.com/csgoh/processpiper) python package. ProcessPiper is a package for generating business process diagrams from plain text."
 )
