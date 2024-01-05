@@ -104,12 +104,14 @@ if selected_sample:
 else:
     code = ""
 
-generate_buton = st.button("Generate")
+
 
 
 code = st.text_area(
-    "Select a sample from the sidebar or enter your code below:", value=code, height=400
+    "Select a sample from the dropdown or enter your code below:", value=code, height=400
 )
+
+generate_buton = st.button("Generate")
 
 
 if generate_buton:
